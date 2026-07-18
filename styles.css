@@ -67,6 +67,18 @@ a:hover {
 }
 
 /* Header Links */
+.site-nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 12px 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
 .links-horizontal {
   display: flex;
   flex-wrap: wrap;
@@ -104,7 +116,7 @@ a:hover {
   display: flex;
   gap: 60px;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .bio {
@@ -157,14 +169,14 @@ a:hover {
 
 /* Education */
 .education-section {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .education-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .education-year {
@@ -190,14 +202,15 @@ a:hover {
 
 /* Projects */
 .projects-section {
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .project-item {
   display: flex;
-  gap: 48px;
-  margin-bottom: 60px;
+  gap: 56px;
+  margin-bottom: 80px;
   align-items: flex-start;
+  flex-direction: row-reverse;
 }
 
 .project-item:last-child {
@@ -224,7 +237,18 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-.project-item:hover .placeholder-img {
+.project-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #e4e4e7;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.project-item:hover .placeholder-img,
+.project-item:hover .project-img {
   transform: translateY(-2px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.04);
 }
@@ -252,13 +276,14 @@ a:hover {
 .project-bullets {
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .project-bullets li {
   font-size: 0.95rem;
-  margin-bottom: 12px;
-  padding-left: 20px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  padding-left: 24px;
   position: relative;
 }
 
@@ -379,7 +404,7 @@ a:hover {
   .education-institute {
     text-align: left;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     gap: 24px;

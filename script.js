@@ -14,4 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     el.classList.add('fade-in');
     observer.observe(el);
   });
+
+  // Fetch stats.json and update Codeforces status
+  fetch('stats.json')
+    .then(response => response.json())
+    .then(data => {
+      if (data && data.codeforces && data.codeforces.rank) {
+        const cfStatus = document.querySelector('.cf-status');
+        if (cfStatus) {
+          const rank = data.codeforces.rank;
+          const capitalizedRank = rank.charAt(0).toUpperCase() + rank.slice(1);
+          cfStatus.textContent = capitalizedRank;
+        }
+      }
+    })
+    .catch(err => console.error("Error fetching stats:", err));
 });
