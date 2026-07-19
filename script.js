@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-  // Fetch stats.json and update Codeforces status
-  fetch('stats.json')
+  // Fetch Codeforces status from official API
+  fetch('https://codeforces.com/api/user.info?handles=k2ksv')
     .then(response => response.json())
     .then(data => {
-      if (data && data.codeforces && data.codeforces.rank) {
+      if (data && data.status === "OK" && data.result && data.result.length > 0 && data.result[0].rank) {
         const cfStatus = document.querySelector('.cf-status');
         if (cfStatus) {
-          const rank = data.codeforces.rank;
+          const rank = data.result[0].rank;
           const capitalizedRank = rank.charAt(0).toUpperCase() + rank.slice(1);
           cfStatus.textContent = capitalizedRank;
         }
       }
     })
-    .catch(err => console.error("Error fetching stats:", err));
+    .catch(err => console.error("Error fetching Codeforces stats:", err));
 });
