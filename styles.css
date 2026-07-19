@@ -489,53 +489,7 @@ a:hover {
   text-decoration-color: #52525b;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  body {
-    padding: 60px 24px;
-  }
 
-  header h1 {
-    font-size: 2.5rem;
-  }
-
-  .two-column, .project-item {
-    flex-direction: column;
-    gap: 32px;
-  }
-  
-  .portrait img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .project-image {
-    width: 100%;
-    flex: 0 0 auto;
-  }
-  
-  .education-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  
-  .education-institute {
-    text-align: left;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 24px;
-    align-items: center;
-  }
-  
-  .footer-links {
-    justify-content: center;
-  }
-}
 
 /* Subtle Animations */
 .fade-in {
