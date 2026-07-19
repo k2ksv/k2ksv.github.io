@@ -6,19 +6,20 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #52525b; /* Slate 600 for high readability but soft contrast */
+  color: #4b5563; /* Slate 600 */
   line-height: 1.8;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 80px 40px;
-  background-color: #ffffff;
+  background-color: #faf9f6;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Typography Headings */
 h1, h2, h3, h4 {
-  color: #09090b; /* Zinc 950 */
+  color: #111827; /* Gray 900 */
   margin: 0;
 }
 
@@ -29,27 +30,82 @@ header {
 
 header h1.classic-title {
   font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   letter-spacing: 0;
-  margin-bottom: 32px;
-  color: #000;
+  margin-bottom: 12px;
+  color: #111827;
 }
 
 header h1.classic-title .small-text {
-  font-size: 0.55em;
+  color: #9ca3af;
+  font-weight: 300;
+  font-size: 0.5em;
   margin: 0 4px;
 }
 
-section h2 {
+.header-subtitle {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+/* Color Bar */
+.color-bar {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  width: 400px;
+  margin: 0 auto 16px auto;
+}
+.cb {
+  flex: 1;
+  height: 6px;
+  border-radius: 4px;
+}
+.cb-gray { background: #e2e8f0; }
+.cb-green { background: #bbf7d0; }
+.cb-teal { background: #a7f3d0; }
+.cb-blue { background: #bfdbfe; }
+.cb-purple { background: #e9d5ff; }
+.cb-orange { background: #fed7aa; }
+.cb-red { background: #fecaca; }
+
+.header-cf-status {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+.header-cf-status .cf-status {
+  color: #03a89e;
   font-weight: 600;
-  font-size: 1.6rem;
-  letter-spacing: -0.01em;
-  margin-bottom: 50px;
-  text-align: center;
-  color: #09090b;
+}
+
+/* Section Headings */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 40px;
+}
+.section-heading .sec-num {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #3b82f6; /* Blue 500 */
+}
+.section-heading .sec-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
 }
 
 /* Global Links */
@@ -68,15 +124,27 @@ a:hover {
 
 /* Header Links */
 .site-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  padding: 12px 0;
-  z-index: 10;
   display: flex;
   justify-content: center;
   gap: 24px;
+  margin-bottom: 24px;
+}
+
+.site-nav a {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #4b5563;
+  transition: all 0.2s;
+}
+
+.site-nav a:hover {
+  color: #111827;
+}
+
+.nav-prefix {
+  color: #3b82f6; /* Blue 500 */
+  margin-right: 2px;
 }
 
 .links-horizontal {
@@ -91,24 +159,31 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #f4f4f5;
-  color: #09090b;
+  background: transparent;
+  color: #4b5563;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border-radius: 99px;
+  border: 1px solid #e5e7eb;
   transition: all 0.2s ease;
 }
 
 .profile-link:hover {
-  background: #e4e4e7;
+  background: #f9fafb;
+  border-color: #d1d5db;
+  color: #111827;
   transform: translateY(-1px);
-  text-decoration: none;
 }
 
 .icon {
   flex-shrink: 0;
+}
+
+.about-section {
+  margin-bottom: 80px;
 }
 
 /* Two Column Layout (Bio) */
@@ -116,7 +191,6 @@ a:hover {
   display: flex;
   gap: 60px;
   align-items: center;
-  margin-bottom: 80px;
 }
 
 .bio {
@@ -141,30 +215,31 @@ a:hover {
   height: 240px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #e4e4e7;
+  border: 2px solid #3b82f6; /* Blue 500 */
+  padding: 4px;
+  background-color: transparent;
 }
 
 .portrait-caption {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
-.caption-link {
+.portrait-cf-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
+  gap: 8px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6b7280; /* Gray 500 */
   text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
 }
 
-.caption-link:hover {
-  text-decoration: none;
-  opacity: 0.8;
-}
-
-.cf-status {
-  color: #059669; /* Emerald 600 */
-  font-weight: 600;
+.portrait-cf-link:hover {
+  color: #111827;
 }
 
 /* Education */
@@ -180,24 +255,45 @@ a:hover {
 }
 
 .education-year {
+  position: relative;
   flex: 0 0 160px;
-  color: #71717a; /* Zinc 500 */
-  font-size: 0.9rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  padding-left: 16px;
+  color: #6b7280; /* Gray 500 */
+  font-size: 0.85rem;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+}
+
+.education-year::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  background-color: #3b82f6; /* Blue 500 */
+  border-radius: 50%;
 }
 
 .education-degree {
   flex: 1;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #09090b;
+  font-size: 1.05rem;
+  color: #111827;
 }
 
 .education-institute {
   flex: 0 0 150px;
   text-align: right;
-  font-size: 1rem;
-  color: #52525b;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+#courses .education-item {
+  margin-bottom: 16px;
+}
+
+#courses .education-item:last-child {
+  margin-bottom: 0;
 }
 
 /* Projects */
@@ -242,7 +338,9 @@ a:hover {
   aspect-ratio: 16/10;
   object-fit: cover;
   border-radius: 12px;
-  border: 1px solid #e4e4e7;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  background-color: #f8fafc;
   display: block;
   transition: all 0.3s ease;
 }
@@ -258,20 +356,32 @@ a:hover {
 }
 
 .project-details h3 {
+  font-family: 'Inter', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 0 0 8px 0;
+  color: #111827;
+  margin: 0 0 12px 0;
   letter-spacing: -0.01em;
 }
 
 .project-meta {
+  display: flex;
+  align-items: center;
   font-size: 0.85rem;
-  color: #71717a;
-  margin-bottom: 20px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
 }
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.status-dot.orange { background: #f59e0b; box-shadow: 0 0 0 3px #fef3c7; }
+.status-dot.green { background: #10b981; box-shadow: 0 0 0 3px #d1fae5; }
 
 .project-bullets {
   list-style-type: none;
@@ -285,13 +395,16 @@ a:hover {
   margin-bottom: 16px;
   padding-left: 24px;
   position: relative;
+  color: #4b5563;
 }
 
 .project-bullets li::before {
-  content: "—";
+  content: ">";
   position: absolute;
   left: 0;
-  color: #a1a1aa;
+  color: #3b82f6; /* Blue 500 */
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-weight: 700;
 }
 
 .project-tech {
@@ -302,13 +415,14 @@ a:hover {
 }
 
 .project-tech span {
-  background: #f4f4f5;
-  color: #52525b;
+  background: transparent;
+  color: #4b5563;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 99px;
-  letter-spacing: 0.02em;
+  border: 1px solid #e5e7eb;
 }
 
 .project-links {
@@ -317,9 +431,16 @@ a:hover {
 }
 
 .project-links a {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', ui-monospace, monospace;
   font-size: 0.9rem;
-  font-weight: 500;
-  color: #09090b;
+  font-weight: 600;
+  color: #4b5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.project-links a:hover {
+  color: #111827;
 }
 
 /* Footer */
