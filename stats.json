@@ -1,37 +1,37 @@
 {
   "codeforces": {
     "username": "k2ksv",
-    "rating": 1610,
-    "maxRating": 1610,
-    "rank": "expert",
-    "solved": 524
+    "rating": 1460,
+    "maxRating": 1501,
+    "rank": "Specialist",
+    "solved": 220
   },
   "leetcode": {
     "username": "k2ksv",
-    "rating": 2045,
-    "maxRating": 2045,
-    "rank": "knight",
-    "solved": 812
+    "rating": 0,
+    "maxRating": 0,
+    "rank": "0",
+    "solved": 0
   },
   "codechef": {
     "username": "k2ksv",
-    "rating": 1845,
-    "maxRating": 1845,
-    "rank": "4 star",
-    "solved": 310
+    "rating": 0,
+    "maxRating": 0,
+    "rank": "0",
+    "solved": 
   },
   "atcoder": {
     "username": "k2ksv",
-    "rating": 1042,
-    "maxRating": 1042,
-    "rank": "brown",
-    "solved": 215
+    "rating": 0,
+    "maxRating": 0,
+    "rank": " ",
+    "solved": 0
   },
   "hackerrank": {
     "username": "k2ksv",
-    "rating": "6 Star",
-    "maxRating": "6 Star",
-    "rank": "gold",
-    "solved": 150
+    "rating": "",
+    "maxRating": " ",
+    "rank": " ",
+    "solved": 0
   }
 }
